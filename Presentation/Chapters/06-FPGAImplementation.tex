@@ -1,0 +1,66 @@
+\setlength{\parskip}{\baselineskip}
+\section{FPGA Implementation}
+
+\begin{frame}
+    \huge FPGA Implementation
+\end{frame}
+
+% Use as a reference - Edit to your liking
+
+% Todo: Replace with your platform
+\begin{frame}{Xilinx ZCU102 Evaluation Kit}
+	\centering
+	\includegraphics[width=0.65\textwidth]{../Images/Hardware/ZCU102-board-overview.jpg}\\
+\end{frame}
+
+% Todo: Replace with your toolchain
+\begin{frame}{Tools Used: Xilinx Vivado HLS}
+	\begin{minipage}{0.6\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{../Images/Platform/Vivado-HLS.png}\\
+	\end{minipage}%
+	\begin{minipage}{0.4\textwidth}
+		\begin{itemize}
+			\item Now Vitis HLS
+			\item High-level design using C/C++, SystemC, OpenCL
+			\item Generates VHDL \& Verilog HDL designs
+			\item Directives
+			\item C/C++ testbench
+			\item C/RTL Cosimulation
+			\item Synthesis Report
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}{Tools Used: Xilinx Vivado IDE}
+	\begin{minipage}{0.6\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{../Images/Platform/Vivado-IDE.png}\\
+	\end{minipage}%
+	\begin{minipage}{0.4\textwidth}
+		\begin{itemize}
+			\item VHDL \& Verilog
+			\item IP Integrator Tool
+			\item Vivado HLS RTL designs
+			\item Synthesis, Implementation \& Download RTL designs
+			\item RTL Simulators \& Integrated Logic Analyzer IPs
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}{Tools Used: Xilinx SDK/Vitis IDE}
+	\begin{minipage}{0.6\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{../Images/Platform/Vitis-IDE.png}\\
+	\end{minipage}%
+	\begin{minipage}{0.4\textwidth}
+		\begin{itemize}
+			\item Vitis IDE  integrates SDK, SDAccel, SDSoC tools
+			\item C/C++ IDE
+			\item Application development for PS part
+			\item PetaLinux \& FreeRTOS
+			\item Download bitstreams
+			\item Debugging tools
+		\end{itemize}
+	\end{minipage}
+\end{frame}

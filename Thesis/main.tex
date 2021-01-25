@@ -1,0 +1,281 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MHL Thesis LaTeX Template
+% Version 1.0 (23/6/2020)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% found on:
+% http://www.LaTeXTemplates.com/template/masters-doctoral-thesis
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	12pt, % The default document font size, options: 10pt, 11pt, 12pt
+	% oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+	english, % ngerman for German
+	onehalfspacing, % Single line spacing, alternatives: singlespacing or doublespacing
+	%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+	%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+	liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+	toctotoc, % Uncomment to add the main table of contents to the table of contents
+	parskip, % Uncomment to add space between paragraphs
+	%nohyperref, % Uncomment to not load the hyperref package
+	headsepline, % Uncomment to get a line under the header
+	% chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+	% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage[backend=bibtex,style=numeric,natbib=true,sorting=none]{biblatex} % Use the bibtex backend with the numeric citation style
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage[section]{placeins}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\makeatletter
+\makeatother
+\def\infinity{\rotatebox{90}{8}}
+\addtocontents{loa}{\def\string\figurename{Algorithm}}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY FILES
+%----------------------------------------------------------------------------------------
+
+% Todo: Comment out example.bib file when done reading the template instructions
+\addbibresource{example.bib} % The filename of the bibliography
+\addbibresource{References.bib} % The filename of the bibliography
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+% Todo: Fill info below
+\thesistitle{Thesis Title} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\author{Name \textsc{Surname}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\supervisor{Prof. Name \textsc{Surname}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\degree{Electrical and Computer Engineer} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\subject{Electrical and Computer Engineering} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{Diploma Thesis} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{https://www.tuc.gr/}{Technical University of Crete}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{https://www.ece.tuc.gr/}{School of Electrical and Computer Engineering}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{https://www.mhl.tuc.gr/}{Microprocessor and Hardware Laboratory}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{
+		% \href{http://faculty.university.com}{Faculty Name}
+} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+	\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+	\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+	\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+\begin{titlepage}
+	\begin{center}
+
+		\vspace*{.06\textheight}
+		{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+		\textsc{\Large Diploma Thesis}\\[0.5cm] % Thesis type
+
+		\HRule \\[0.4cm] % Horizontal line
+		{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+		\HRule \\[1.5cm] % Horizontal line
+
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft} \large
+				\emph{Author:}\\
+				% Todo: Fill correct link
+				\href{http://example.com/}{\authorname} % Author name - remove the \href bracket to remove the link
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.5\textwidth}
+			\begin{flushright} \large
+				\emph{Thesis Committee:} \\
+				% Todo: Fill correct link
+				\href{http://example.com/}{\supname}\\ % Supervisor name - remove the \href bracket to remove the link
+				% Todo: Fill correct link, full name
+				\href{http://example.com/}{Prof. Name \textsc{Surname}}\\
+				% Todo: Fill correct link, full name
+				\href{http://example.com/}{Prof. Name \textsc{Surname}}
+			\end{flushright}
+		\end{minipage}\\[0.2cm]
+
+		\includegraphics[scale=0.21]{../Images/TUC_logo.png} % University/department logo - uncomment to place it
+		\\[0.5cm]
+
+		\vfill
+
+		\large \textit{A thesis submitted in fulfillment of the requirements\\ for the diploma of \degreename}\\[0.3cm] % University requirement text
+		\textit{in the}\\[0.4cm]
+		\deptname\\\groupname\\[2cm] % Research group name and department name
+
+		\vfill
+
+		{\large \today}\\[4cm] % Date
+		%\includegraphics{Logo} % University/department logo - uncomment to place it
+
+		\vfill
+	\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+	\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+	% Todo: Add Abstract
+	The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+	\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+	% Todo: Add Acknowledgements
+	The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+\listoffigures % Prints the list of figures
+\listoftables % Prints the list of tables
+\listofalgorithms % Prints the list of algorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+% Todo: Edit to your requirements
+% spell-checker: disable
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)]
+	\textbf{ALU}	& \textbf{A}rithmetic \textbf{L}ogic \textbf{U}nit\\
+	\textbf{ASIC}	& \textbf{A}pplication \textbf{S}pecific \textbf{I}ntegrated \textbf{C}ircuit\\
+	\textbf{BRAM}	& \textbf{B}lock \textbf{R}andom \textbf{A}ccess \textbf{M}emory\\
+	\textbf{CPU}	& \textbf{C}entral \textbf{P}rocessor \textbf{U}nit\\
+	\textbf{CS}		& \textbf{C}omputer \textbf{S}cience\\
+	\textbf{DDR4}	& \textbf{D}ouble \textbf{D}ata \textbf{R}ate type texbf{4} memory\\
+	\textbf{DRAM}	& \textbf{D}ynamic \textbf{R}andom \textbf{A}ccess \textbf{M}emory\\
+	\textbf{DSP}	& \textbf{D}igital \textbf{S}ignal \textbf{P}rocessor\\
+	\textbf{FF}		& \textbf{F}lip \textbf{F}lops\\
+	\textbf{FPGA}	& \textbf{F}ield \textbf{P}rogrammable \textbf{G}ate \textbf{A}rray\\
+	\textbf{GDDR6}	& \textbf{G}raphics \textbf{D}ouble \textbf{D}ata \textbf{R}ate type \textbf{6} memory\\
+	\textbf{GPU}	& \textbf{G}raphic \textbf{P}rocessor \textbf{U}nit\\
+	\textbf{HBM}	& \textbf{H}igh \textbf{B}andwidth \textbf{M}emory\\
+	\textbf{HDL}	& \textbf{H}ardware \textbf{D}escription \textbf{L}anguage\\
+	\textbf{HLS}	& \textbf{H}igh \textbf{L}evel \textbf{S}ynthesis\\
+	\textbf{HPC}	& \textbf{H}ight \textbf{P}erformance \textbf{C}omputing\\
+	\textbf{LUT}	& \textbf{L}ook \textbf{U}p \textbf{T}able\\
+	\textbf{MPSoC}	& \textbf{M}ulti \textbf{P}rocessor \textbf{S}ystem \textbf{o}n \textbf{C}hip\\
+	\textbf{PL}		& \textbf{P}rogrammable \textbf{L}ogic\\
+	\textbf{PS}		& \textbf{P}rocessing \textbf{S}ystem\\
+	\textbf{RAM}	& \textbf{R}andom \textbf{A}ccess \textbf{M}emory\\
+	\textbf{SDK}	& \textbf{S}oftware \textbf{D}evelopment \textbf{K}it\\
+	\textbf{SIMD}	& \textbf{S}ingle \textbf{I}nstruction \textbf{M}ultiple \textbf{D}ata\\
+	\textbf{SSE}	& \textbf{S}treaming \textbf{S}IMD \textbf{E}xtensions\\
+	\textbf{SSD}	& \textbf{S}olid \textbf{S}tate \textbf{D}rive\\
+	\textbf{TDP}	& \textbf{T}hermal \textbf{D}esign \textbf{P}ower\\
+	\textbf{URAM}	& \textbf{U}ltra \textbf{R}andom \textbf{A}ccess \textbf{M}emory\\
+	\textbf{USD}	& \textbf{U}nited \textbf{S}tates \textbf{D}ollar\\
+\end{abbreviations}
+% spell-checker: enable
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedicated to my family and friends\ldots}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\include{Chapters/00-ExampleChapter}
+\include{Chapters/01-Introduction}
+\include{Chapters/02-TheoreticalBackground}
+\include{Chapters/03-RelatedWork}
+\include{Chapters/04-RobustnessAnalysis}
+\include{Chapters/05-FPGAImplementation}
+\include{Chapters/06-Results}
+\include{Chapters/07-ConclusionsAndFutureWork}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+% Todo: Comment out if not needed
+\include{Appendices/AppendixA}
+% \include{Appendices/AppendixB}
+% \include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[keyword={References}, title={References}]
+\printbibliography[keyword={Link}, title={External Links}]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

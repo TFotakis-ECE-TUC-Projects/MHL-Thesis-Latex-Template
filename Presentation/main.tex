@@ -1,0 +1,108 @@
+%!TEX program = xelatex
+% \documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
+
+% \usepackage[english]{babel}
+
+% \usepackage{graphicx,hyperref,url, materialbeamer}
+% \usepackage{braket}
+% \usepackage{euler}
+% \usepackage{listings}
+
+\usepackage{materialbeamer}
+
+% \graphicspath{ {../Images/} }
+\setbeamercovered{transparent}
+\lstdefinestyle{customsql}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=SQL,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{escapechar=@,style=customsql}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+
+% The title of the presentation:
+%  - first a short version which is visible at the bottom of each slide;
+%  - second the full title shown on the title slide;
+% Todo: Fill your thesis title
+\title[Diploma Thesis]{Example Thesis Title}
+
+% Optional: a subtitle to be displayed on the title slide
+\subtitle{Diploma Thesis}
+
+% The author(s) of the presentation:
+%  - again first a short version to be displayed at the bottom;
+%  - next the full list of authors, which may include contact information;
+% \author[L. Lancia \& G. Salillari]{L. Lancia, G. Salillari}
+% Todo: Fill you full name
+\author{Surname Name}
+
+% Todo: Position logo in respect to your title
+% set the y parameter in the \put(175, y) (in this example it is set 30)
+\titlegraphic{
+  \begin{picture}(0,0)
+    \put(175,30){\makebox(0,0)[rt]{\includegraphics[width=3cm]{../Images/TUC_logo_circle.png}}}
+  \end{picture}
+}
+
+% The institute:
+%  - to start the name of the university as displayed on the top of each slide
+%    this can be adjusted such that you can also create a Dutch version
+%  - next the institute information as displayed on the title slide
+\institute[Technical University of Crete]{Electrical \& Computer Engineering School\\Technical University of Crete}
+
+% Add a date and possibly the name of the event to the slides
+%  - again first a short version to be shown at the bottom of each slide
+%  - second the full date and event name for the title slide
+\date[\today]{\today}
+
+% \providecommand{\di}{\mathop{}\!\mathrm{d}}
+% \providecommand*{\der}[3][]{\frac{d\if?#1?\else^{#1}\fi#2}{d #3\if?#1?\else^{#1}\fi}}
+%  \providecommand*{\pder}[3][]{%
+%     \frac{\partial\if?#1?\else^{#1}\fi#2}{\partial #3\if?#1?\else^{#1}\fi}%
+%   }
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+\input{Chapters/01-Introduction}
+\input{Chapters/02-TheoreticalBackground}
+\input{Chapters/03-RelatedWork}
+\input{Chapters/04-RobustnessAnalysis}
+\input{Chapters/05-ArchitectureDesign}
+\input{Chapters/06-FPGAImplementation}
+\input{Chapters/07-Results}
+\input{Chapters/08-ConclusionsAndFutureWork}
+
+% Todo: Uncomment these examples to see the official template
+% \input{Chapters/example/introduction}
+% \input{Chapters/example/datamodel}
+% \input{Chapters/example/architecture}
+% \input{Chapters/example/implementation}
+% \input{Chapters/example/consistency}
+% \input{Chapters/example/workload}
+
+\setbeamercolor{background canvas}{bg=matblue}
+\setbeamercolor{normal text}{fg=white}
+\begin{frame}[plain, b]
+	\centering
+	\huge \textcolor{white}{Thank You!}\\
+	\large \textcolor{white}{Any Questions?}
+	\normalsize
+	\vspace*{\fill}
+\end{frame}
+
+\end{document}
